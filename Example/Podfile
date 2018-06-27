@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ASNotificationCenter_Example' do
+  pod 'ASNotificationCenter', :path => '../'
+
+  target 'ASNotificationCenter_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,16 @@
+PODS:
+  - ASNotificationCenter (0.1.0)
+
+DEPENDENCIES:
+  - ASNotificationCenter (from `../`)
+
+EXTERNAL SOURCES:
+  ASNotificationCenter:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ASNotificationCenter: f2670d75edafefcbfed072ca3c1cfd82c35e644b
+
+PODFILE CHECKSUM: 39d64a0cfb274ed89bdabe8759fba160f5eff95f
+
+COCOAPODS: 1.2.0

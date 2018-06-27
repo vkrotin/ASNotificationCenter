@@ -1,0 +1,6 @@
+framework module ASNotificationCenter {
+  umbrella header "ASNotificationCenter-umbrella.h"
+
+  export *
+  module * { export * }
+}
