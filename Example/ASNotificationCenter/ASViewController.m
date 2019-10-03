@@ -25,10 +25,7 @@
     [super viewDidLoad];
     
     [[ASNotificationCenter protectedCenter] addObserver:self selector:@selector(notificationSomeText:) name:@"notificationSomeText" object:nil];
-    
-    [_protectedCenter addObserver:self selector:@selector(singleAction:) name:@"notifSingle" object:nil];
-    
-    
+    [[ASNotificationCenter protectedCenter] addObserver:self selector:@selector(notificationSomeColor:) name:@"notificationSomeColor" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,14 +39,15 @@
     NSDictionary *receiveObj = notification.object;
     
     _textView.text = receiveObj[@"someText"];
-    self.view.backgroundColor = receiveObj[@"someColor"];
+   // self.view.backgroundColor = receiveObj[@"someColor"];
     
 }
 
--(void) singleAction:(ASNotifiation *) notification{
-    _textView.text = [NSString stringWithFormat:@"%@ append: %@", _textView.text, notification.object];
-    [[ASNotificationCenter protectedCenter] removeObserver:self name:@"notifSingle" object:nil];
-    [[ASNotificationCenter protectedCenter] removeObserver:self name:notification.name object:nil];
+-(void) notificationSomeColor:(ASNotifiation *) notification{
+    NSDictionary *receiveObj = notification.object;
+
+    self.view.backgroundColor = receiveObj[@"someColor"];
+    
 }
 
 @end

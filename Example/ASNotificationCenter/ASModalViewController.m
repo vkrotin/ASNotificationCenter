@@ -31,12 +31,14 @@
 - (IBAction)backButtonTouch:(id)sender {
     [self touchGesture:nil];
     
+    [[ASNotificationCenter protectedCenter] postNotificationName:@"notificationSomeText" object:@{@"someText" : _inputTextField.text}];
 }
 
 - (IBAction)touchGesture:(id)sender {
-    [[ASNotificationCenter protectedCenter] postNotificationName:@"notificationSomeText" object:@{@"someText" : _inputTextField.text, @"someColor" : [UIColor randomColor]}];
     
-    [_protectedCenter postNotificationName:@"notifSingle" object:_inputTextField.text];
+    [[ASNotificationCenter protectedCenter] postNotificationName:@"notificationSomeColor" object:@{ @"someColor" : [UIColor randomColor]}];
+    
+   // [_protectedCenter postNotificationName:@"notifSingle" object:_inputTextField.text];
     
     [self.view endEditing:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
